@@ -8,7 +8,7 @@ export default function ProductDetail() {
     const [product, setProduct] = useState<Product | null>(null);
 
     useEffect(() => {
-        if (id) getProductById(id).then(setProduct);
+        if (id) getProductById(id).then((res) => setProduct(res || null));
     }, [id]);
 
     if (!product) return <p>Loading...</p>;
